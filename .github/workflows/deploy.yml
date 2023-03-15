@@ -49,7 +49,7 @@ jobs:
            environmentType=${{ inputs.environmentType }}
            reviewApiUrl=${{ inputs.reviewApiUrl }}
            reviewApiKey=${{ secrets.reviewApiKey }}
-            sqlServerAdministratorLogin=${{ inputs.sqlServerAdministratorLogin }}
+           sqlServerAdministratorLogin=${{ inputs.sqlServerAdministratorLogin }}
            sqlServerAdministratorLoginPassword=${{ secrets.sqlServerAdministratorLoginPassword }}
          deploymentMode: Validate
      - if: inputs.environmentType == 'Production'
@@ -60,11 +60,11 @@ jobs:
          resourceGroupName: ${{ inputs.resourceGroupName }}
          template: ./deploy/main.bicep
          parameters: >
-           environmentType=${{ inputs.environmentType }}
-           reviewApiUrl=${{ inputs.reviewApiUrl }}
-           reviewApiKey=${{ secrets.reviewApiKey }}
-            sqlServerAdministratorLogin=${{ inputs.sqlServerAdministratorLogin }}
-            sqlServerAdministratorLoginPassword=${{ secrets.sqlServerAdministratorLoginPassword }}
+          environmentType=${{ inputs.environmentType }}
+          reviewApiUrl=${{ inputs.reviewApiUrl }}
+          reviewApiKey=${{ secrets.reviewApiKey }}
+          sqlServerAdministratorLogin=${{ inputs.sqlServerAdministratorLogin }}
+          sqlServerAdministratorLoginPassword=${{ secrets.sqlServerAdministratorLoginPassword }}
          additionalArguments: --what-if
 
   deploy:
@@ -95,11 +95,11 @@ jobs:
         resourceGroupName: ${{ inputs.resourceGroupName }}
         template: ./deploy/main.bicep
         parameters: >
-           environmentType=${{ inputs.environmentType }}
-           reviewApiUrl=${{ inputs.reviewApiUrl }}
-           reviewApiKey=${{ secrets.reviewApiKey }}
-            sqlServerAdministratorLogin=${{ inputs.sqlServerAdministratorLogin }}
-            sqlServerAdministratorLoginPassword=${{ secrets.sqlServerAdministratorLoginPassword }}
+         environmentType=${{ inputs.environmentType }}
+         reviewApiUrl=${{ inputs.reviewApiUrl }}
+         reviewApiKey=${{ secrets.reviewApiKey }}
+         sqlServerAdministratorLogin=${{ inputs.sqlServerAdministratorLogin }}
+         sqlServerAdministratorLoginPassword=${{ secrets.sqlServerAdministratorLoginPassword }}
 
   deploy-website:
     needs: deploy
